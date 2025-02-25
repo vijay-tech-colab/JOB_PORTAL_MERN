@@ -6,13 +6,13 @@ function Navbar() {
   const { user } = useUser();
   console.log(user);
   return (
-    <div className="shadow py-4">
+    <div className="shadow py-4 ">
       <div className="container px-4 2xl:px-20 mx-auto flex justify-between">
         <img src={assets.logo} alt="" />
         {user ? (
           <div className="flex items-center gap-3">
             <Link to={'/applications'}>Apply Jobs</Link>
-            <p>Hi , {user.firstName + " " + user.lastName}</p>
+            <p className="max-sm:hidden">Hi , {user.firstName + " " + user.lastName}</p>
             <UserButton/>
           </div>
         ) : (

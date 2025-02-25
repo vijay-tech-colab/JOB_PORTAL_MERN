@@ -3,22 +3,22 @@ import { assets } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
 
 function Hero() {
-  const { searchFilter, isSearched, setSearchFilter, setIssearched } =
-    useContext(AppContext);
+  const { setSearchFilter, setIssearched } = useContext(AppContext);
   const titleRef = useRef(null);
   const locationRef = useRef(null);
 
-  const onSearch = (evenet) => {
+  const onSearch = (event) => {
     setSearchFilter({
-        title : titleRef.current.value,
-        location : locationRef.current.value
+      title: titleRef.current.value,
+      location: locationRef.current.value,
     });
+
     setIssearched(true);
     console.log({
-        title : titleRef.current.value,
-        location : locationRef.current.value
-    })
-  }
+      title: titleRef.current.value,
+      location: locationRef.current.value,
+    });
+  };
   return (
     <div className="container 2xl:px-20 mx-auto my-10">
       <div className="bg-gradient-to-r from-purple-800 to-purple-950 text-white text-center py-16 mx-2 rounded-lg">
@@ -48,7 +48,10 @@ function Hero() {
               className="max-sm:text-xs p-2 rounded outline-none w-full"
             />
           </div>
-          <button onClick={onSearch} className="bg-blue-600 px-6 py-2 rounded text-white">
+          <button
+            onClick={onSearch}
+            className="bg-blue-600 px-6 py-2 rounded text-white"
+          >
             Search
           </button>
         </div>
